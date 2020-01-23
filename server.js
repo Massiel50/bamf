@@ -22,11 +22,13 @@ app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
 const routes = require("./controllers/moviescontrollers.js");
-
 app.use(routes);
+
+
 // Routes
 // =============================================================
 require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 
 
