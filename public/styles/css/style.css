@@ -1,16 +1,13 @@
 body, html {
     height: 100%;
-    font-family: "Inconsolata", sans-serif;
-    
+    font-family: "Inconsolata", sans-serif; 
   }
-  
   .bgimg {
     background-position: center;
     background-size: cover;
     background-image: url("/public/styles/images/slj.jpg");
     min-height: 75%;
   }
-  
   .menu {
     display: none;
   }
