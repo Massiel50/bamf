@@ -8,9 +8,16 @@ body, html {
     background-position: center;
     background-size: cover;
     background-image: url("/public/styles/images/slj.jpg");
-    min-height: 75%;
+    min-height: 100%;
+    min-width: 100%;
+
+  }
+
+  .logIn {
+    margin-top: 10rem;
   }
   
-  .menu {
-    display: none;
+  .signUp {
+    margin-left: 3rem;
+    color: orange
   }
