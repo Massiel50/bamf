@@ -7,7 +7,7 @@ body, html {
   .bgimg {
     background-position: center;
     background-size: cover;
-    background-image: url("/bamf/assets/images/slj.jpg");
+    background-image: url("/public/styles/images/slj.jpg");
     min-height: 75%;
   }
   
