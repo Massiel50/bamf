@@ -22,10 +22,15 @@ html {
 }
 
 
-.signUp {
+.signUpButton {
   margin-left: 3rem;
   color: orange
 }
+
+.signUpForm {
+  min-width: 10%;
+}
+
 
 .motive {
   height: 14rem;
@@ -40,7 +45,6 @@ html {
 
 .movieBackground {
   background-color: silver;
-}
 }
 
 footer {
