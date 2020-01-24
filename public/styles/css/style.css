@@ -1,37 +1,50 @@
-body, html {
-    height: 100%;
-    font-family: "Inconsolata", sans-serif; 
-  }
-  .bgimg {
-    background-position: center;
-    background-size: cover;
-    background-image: url("/public/styles/images/slj.jpg");
-    min-height: 100%;
-    min-width: 100%;
+body,
+html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
 
-  }
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/public/styles/images/slj.jpg");
+  min-height: 100%;
+  min-width: 100%;
 
-  .logIn {
-    margin-top: 15%;
-  }
+}
 
-  .active {
-    color: orange;
-  }
+.logIn {
+  margin-top: 15%;
+}
 
-  
-  .signUp {
-    margin-left: 3rem;
-    color: orange
-  }
+.active {
+  color: orange;
+}
 
-  .motive {
-    height: 15rem;
-    width: 20rem;
-    text-shadow: black;
-    font-size: large;
-    font-weight: bolder;
-    text-align: center;
-    margin-left: 9rem;
-    margin-top: 9rem;
-  }
+
+.signUp {
+  margin-left: 3rem;
+  color: orange
+}
+
+.motive {
+  height: 15rem;
+  width: 20rem;
+  text-shadow: black;
+  font-size: large;
+  font-weight: bolder;
+  text-align: center;
+  margin-left: 9rem;
+  margin-top: 9rem;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
