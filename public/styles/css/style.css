@@ -1,4 +1,3 @@
-
 body,
 html {
   height: 100%;
@@ -49,6 +48,7 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
 body, html {
     height: 100%;
     font-family: "Inconsolata", sans-serif; 
@@ -91,3 +91,46 @@ body, html {
     float: left;
   }
 
+body,
+html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/public/styles/images/slj.jpg");
+  min-height: 100%;
+  min-width: 100%;
+
+}
+
+.logIn {
+  margin-top: 15%;
+}
+
+.active {
+  color: orange;
+}
+
+
+.signUp {
+  margin-left: 3rem;
+  color: orange
+}
+
+.motive {
+  height: 15rem;
+  width: 20rem;
+  text-shadow: black;
+  font-size: large;
+  font-weight: bolder;
+  text-align: center;
+  margin-left: 9rem;
+  margin-top: 9rem;
+}
+
+.movieCard {
+  float: left;
+}
