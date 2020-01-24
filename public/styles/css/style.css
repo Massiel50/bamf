@@ -7,7 +7,7 @@ html {
 .bgimg {
   background-position: center;
   background-size: cover;
-  background-image: url("/public/styles/images/slj.jpg");
+  background-image: url("../images/slj.jpg");
   min-height: 100%;
   min-width: 100%;
 
