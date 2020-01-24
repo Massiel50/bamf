@@ -2,7 +2,6 @@ body,
 html {
   height: 100%;
   font-family: "Inconsolata", sans-serif;
-  background-color: silver;
 }
 
 .bgimg {
@@ -37,6 +36,11 @@ html {
   text-align: center;
   margin-left: 9rem;
   margin-top: 1rem;
+}
+
+.movieBackground {
+  background-color: silver;
+}
 }
 
 footer {
