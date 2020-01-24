@@ -16,7 +16,9 @@ module.exports = function(app) {
   app.post("/api/signup", function(req, res) {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname
     })
       .then(function() {
         res.redirect(307, "/api/login");
