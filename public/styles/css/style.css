@@ -2,7 +2,6 @@ body,
 html {
   height: 100%;
   font-family: "Inconsolata", sans-serif;
-  background-color: silver;
 }
 
 .bgimg {
@@ -23,20 +22,33 @@ html {
 }
 
 
-.signUp {
+.signUpButton {
   margin-left: 3rem;
   color: orange
 }
 
+.signUpForm {
+ margin-top: 6rem;
+ margin-left: 5rem;
+}
+
+.signUpSubmit {
+  margin-left: 6rem;
+}
+
 .motive {
-  height: 15rem;
-  width: 20rem;
+  height: 14rem;
+  width: 22rem;
   text-shadow: black;
   font-size: large;
   font-weight: bolder;
   text-align: center;
   margin-left: 9rem;
-  margin-top: 9rem;
+  margin-top: 1rem;
+}
+
+.movieBackground {
+  background-color: silver;
 }
 
 footer {
@@ -49,6 +61,7 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
 
 .dbtn {
   background-color: gray;
