@@ -35,3 +35,7 @@ body, html {
     margin-left: 9rem;
     margin-top: 9rem;
   }
+  
+  .movieCard {
+    float: left;
+  }
