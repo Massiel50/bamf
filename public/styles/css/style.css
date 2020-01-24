@@ -57,3 +57,12 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
+
+.dbtn {
+  background-color: gray;
+}
+
+.collection-header {
+  text-align: center;
+}
