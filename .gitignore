@@ -104,3 +104,6 @@ dist
 .tern-port
 package-lock.json
 config/config.json
+
+# MAC File
+.DS_Store
