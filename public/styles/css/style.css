@@ -14,10 +14,25 @@ body, html {
   }
 
   .logIn {
-    margin-top: 10rem;
+    margin-top: 15%;
+  }
+
+  .active {
+    color: orange;
   }
   
   .signUp {
     margin-left: 3rem;
     color: orange
+  }
+
+  .motive {
+    height: 15rem;
+    width: 20rem;
+    text-shadow: black;
+    font-size: large;
+    font-weight: bolder;
+    text-align: center;
+    margin-left: 9rem;
+    margin-top: 9rem;
   }
