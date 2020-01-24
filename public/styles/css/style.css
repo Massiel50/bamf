@@ -1,9 +1,7 @@
 body, html {
     height: 100%;
-    font-family: "Inconsolata", sans-serif;
-    
+    font-family: "Inconsolata", sans-serif; 
   }
-  
   .bgimg {
     background-position: center;
     background-size: cover;
@@ -20,10 +18,15 @@ body, html {
   .active {
     color: orange;
   }
+
   
   .signUp {
     margin-left: 3rem;
     color: orange
+
+  .menu {
+    display: none;
+
   }
 
   .motive {
