@@ -28,9 +28,13 @@ html {
 }
 
 .signUpForm {
-  min-width: 10%;
+ margin-top: 6rem;
+ margin-left: 5rem;
 }
 
+.signUpSubmit {
+  margin-left: 6rem;
+}
 
 .motive {
   height: 14rem;
