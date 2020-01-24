@@ -11,14 +11,14 @@ module.exports = function(sequelize, DataTypes)
     });
 
     // Associate the userMovies model with the users
-    userMovies.associate = function(models)
-    {
-        // User movies belong to the user's created movie list
-        userMovies.belongsTo(models.users,
-            {
-                foreignKey: {allowNull: false}
-            });
-    };
+    // userMovies.associate = function(models)
+    // {
+    //     // User movies belong to the user's created movie list
+    //     userMovies.belongsTo(models.users,
+    //         {
+    //             foreignKey: {allowNull: false}
+    //         });
+    // };
 
     // Return the model object at the end
     return userMovies;
