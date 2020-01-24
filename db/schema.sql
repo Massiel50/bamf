@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS BAMFmovies_db;
+DROP DATABASE IF EXISTS bamfmovies_db;
 CREATE DATABASE BAMFmovies_db;
-USE BAMFmovies_db;
+USE bamfmovies_db;
 CREATE TABLE users(
     username VARCHAR(30) NOT NULL,
     PASSWORD VARCHAR(30) NOT NULL
@@ -25,3 +25,4 @@ CREATE TABLE user_movies(
     Updated at time
     */
 );
+

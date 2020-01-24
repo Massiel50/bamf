@@ -1,4 +1,18 @@
 'use strict';
+require("dotenv").config()
+
+var fs        = require('fs');
+var path      = require('path');
+var Sequelize = require('sequelize');
+var basename  = path.basename(module.filename);
+var env       = process.env.NODE_ENV || 'development';
+var config    = require(__dirname + '/../config/config.json')[env];
+var db        = {};
+
+if (config.use_env_variable) {
+  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+} else {
+  var sequelize = new Sequelize(config.database, config.username, process.env.password, config);
 
 const fs = require('fs');
 const path = require('path');
@@ -17,6 +31,7 @@ if (config.use_env_variable) {
 
 fs
   .readdirSync(__dirname)
+  
   .filter(file => {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
@@ -26,6 +41,7 @@ fs
   });
 
 Object.keys(db).forEach(modelName => {
+
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
