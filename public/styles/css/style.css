@@ -10,22 +10,26 @@ html {
   background-image: url("../images/slj.jpg");
   min-height: 100%;
   min-width: 100%;
-
 }
-
-.logIn {
-  margin-top: 15%;
+.row .col.s8 {
+  width: 66.6666666667%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+  margin-top: 16rem;
 }
-
+#submitLogBtn {
+  float: left;
+  margin-left: 4rem;
+}
 
 .signUpButton {
-  margin-left: 3rem;
-  color: orange
+  margin-left: 28rem;
 }
 
 .signUpForm {
  margin-top: 6rem;
- margin-left: 5rem;
+ margin-left: 6rem;
 }
 
 .signUpSubmit {
