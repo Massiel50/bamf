@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
-
+var axios = require("axios");
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -31,7 +31,7 @@ module.exports = function(app) {
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/home");
+    res.redirect("/");
   });
 
   // Route for getting some data about our user to be used client side
@@ -48,4 +48,15 @@ module.exports = function(app) {
       });
     }
   });
+  // app.get("/moviedata", function (req,res){
+  //   axios.get("https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy")
+
+    
+
+
+  //   .then(function(data){
+  //     console.log(data);
+      
+  //   })
+  // })
 };
