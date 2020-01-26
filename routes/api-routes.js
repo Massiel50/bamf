@@ -48,19 +48,19 @@ module.exports = function(app) {
       });
     }
   });
-  app.get("/moviedata", function (req,res){
+//   app.get("/moviedata", function (req,res){
 
-    // let search = $("#search").val().trim();
-    let search = "The Matrix"
+//     // let search = $("#search").val().trim();
+//     let search = "The Matrix"
 
-    axios.get("https://www.omdbapi.com/?t=" + search + "&apikey=trilogy")
+//     axios.get("https://www.omdbapi.com/?t=" + search + "&apikey=trilogy")
 
-    .then(function(data){
-      console.log(data);
-      generateMovieCards(data);
-    })
+//     .then(function(data){
+//       console.log(data);
+//       generateMovieCards(data);
+//     })
   
-  function generateMovieCards() {
-    // loop through the data movie title and posters
-  }
-})
+//   function generateMovieCards() {
+//     // loop through the data movie title and posters
+//   }
+// })
