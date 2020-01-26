@@ -2,7 +2,7 @@
 const axios = require("axios");
 
 // User Movie request
-const movie;
+let movie = $("#search").val().trim();
 // Get request from OMDB API
 axios.get(`https://www.omdbapi.com/?t=${movie}&apikey=trilogy`)
     .then(function(res)
