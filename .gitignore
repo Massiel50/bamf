@@ -107,3 +107,4 @@ config/config.json
 
 # MAC File
 .DS_Store
+config/config.json
