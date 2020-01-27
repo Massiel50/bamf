@@ -40,6 +40,7 @@ $("#searchBtn").click((e)=>{
 
 $(document).ready(function() {
 
+
 // let cardImage = document.querySelector(".card-image");
 
 // axios({
