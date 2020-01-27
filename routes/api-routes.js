@@ -82,6 +82,7 @@ module.exports = function (app) {
    console.log("with this data ", req.body);
    
   db.userMovies.create({
+    UserId:1,
     imdbID:req.body.imdbID,
     poster: req.body.poster,
     title: req.body.title,
@@ -95,4 +96,4 @@ module.exports = function (app) {
       res.status(500).json(err);
     });
 });
-}
+};
