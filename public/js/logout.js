@@ -12,6 +12,7 @@ $(document).ready(function () {
         $.get("/logout")
 
          .then(function () {
+            window.location.replace("/");
              console.log("succesfully logged out");
              
                 // If there's an error, log the error
