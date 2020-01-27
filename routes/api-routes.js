@@ -66,39 +66,14 @@ module.exports = function (app) {
 
 
 
-  app.get("/moviedata", function (req, res) {
-    axios.get("https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy")
-      .then(function (data) {
-        console.log(data);
+    app.get("/moviedata", function (req, res) {
+      axios.get("https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy")
+        .then(function (data) {
+          console.log(data);
 
-      })
-  });
-  
-  app.delete("/api/members/:id", function (req, res) {
-    db.userMovies.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function (dbuserMovies) {
-      res.json(dbuserMovies);
+        })
     });
+
+
   });
-};
-//   app.get("/moviedata", function (req,res){
-
-//     // let search = $("#search").val().trim();
-//     let search = "The Matrix"
-
-//     axios.get("https://www.omdbapi.com/?t=" + search + "&apikey=trilogy")
-
-//     .then(function(data){
-//       console.log(data);
-//       generateMovieCards(data);
-//     })
-
-//   function generateMovieCards() {
-//     // loop through the data movie title and posters
-//   }
-// })
-
-// A delete route for the userMovies
+}
