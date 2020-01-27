@@ -19,7 +19,7 @@ module.exports = function (app) {
   app.get("/signup", function (req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.render("dashboard");
+      res.render("members");
     }
     res.render("signUp");
   });
@@ -46,11 +46,8 @@ module.exports = function (app) {
       
     })
 
-    
-
-
-
     res.render("dashboard",{user:req.user})
+
   });
  // shows the movies page for searching for movies
 app.get("/movies", function(req,res){
