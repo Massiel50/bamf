@@ -43,7 +43,7 @@ module.exports = function (app) {
       include:[db.userMovies]
     })
     .then(function(data){
-      console.log(data);
+      // console.log(data);
       
     })
 
@@ -53,23 +53,6 @@ module.exports = function (app) {
  // shows the movies page for searching for movies
   app.get("/movies", function(req,res){
     res.render("movies");
-  })
-
-  app.get("/api/movies/search/:movie", function(req,res){
-     // get movie from parameters
-    let movie = req.params.movie
-    console.log("movie", movie);
-    
-      moviesController.getMovies(movie,(data) => {
-    
-        //update the object
-        console.log("the data is ",  data);
-        console.log("Title", data.title);
-        console.log("Image",data.poster);
-        console.log("Plot",data.plot);
-        renderData(data)
-      });
-    res.render("movies", data);
   })
 
 };
