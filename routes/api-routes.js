@@ -51,19 +51,52 @@ module.exports = function (app) {
     }
   });
 
+  app.get("/moviedata", function (req,res){
+    axios.get("https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy")
+    .then(function(data){
+      console.log(data);
+      
+    })
+  })
 
-  app.get("/api/movies/search/:movie", function (req, res) {
+  
+  app.get("/api/movies/search/:movie", function(req,res){
     // get movie from parameters
-    let movie = req.params.movie;
+   let movie = req.params.movie
+   console.log("movie", movie);
+   
+     moviesController.getMovies(movie,(data) => {
+   
+       //update the object
+       console.log("the data is ",  data);
+       console.log("Title", data.title);
+       console.log("Image",data.poster);
+       console.log("Plot",data.plot);
+       res.json(data);
+     });
+ })
 
-    console.log(movie)
-
-    let results = moviesController.getMovies(movie);
-    console.log("results is ", results);
-    console.log("Title", results.title);
-    console.log("Image", results.poster);
-    console.log("Plot", results.plot);
-
+//route to save movies
+ app.post("/api/savemovie", function(req, res) {
+   console.log("Save movie route...");
+   console.log("with this data ", req.body);
+   
+  db.userMovies.create({
+    imdbID:req.body.imdbID,
+    poster: req.body.poster,
+    title: req.body.title,
+    plot: req.body.plot,
+    watched:0
+  })
+    .then(function() {
+      res.redirect(307, "/search");
+    })
+    .catch(function(err) {
+      res.status(500).json(err);
+    });
+});
+};
+//   app.get("/moviedata", function (req,res){
 
 
     app.get("/moviedata", function (req, res) {

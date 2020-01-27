@@ -25,18 +25,39 @@
 // }
 $(document).ready(function () {
 // click handler for the movie search
-$("#searchBtn").click((event)=>{
-    event.preventDefault();
-    console.log("search button clicked, searching for movies")
-    // ajax to hit the server side call to the route
-    let movie = $(".searchMovie").val().trim();
+    $("#searchBtn").click((event)=>{
+        event.preventDefault();
+        console.log("search button clicked, searching for movies")
+        // ajax to hit the server side call to the route
+        let movie = $(".searchMovie").val().trim();
 
-    console.log("The value of the movie" + movie);
+        console.log("The value of the movie " + movie);
+        $.ajax({url: "/api/movies/search/"+ movie, success: function(result){
+            
+            $("#title").html(result.title);
+            $("#title").attr("data-id",result.imdbID);
+            $("#image").attr("src", result.poster);
+            $("#plot").html(result.plot);
+        }});
+    })
 
-    $.ajax("/api/movies/search/"+ movie , ((data)=>{
-        console.log(data);
-    }))
-})
+
+
+    //click handler for saving a movie
+    $("#saveMovie").click((event)=>{
+        console.log("Save button clicked");
+        let movieData = {
+            imdbID:$("#title").attr("data-id"),
+            title:$("#title").text(),
+            plot:$("#plot").text(),
+            poster: $("#image").attr("src")
+        }
+
+        $.post("/api/savemovie",movieData, function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+          });
+        
+    })
 })
 
 $(document).ready(function() {
