@@ -1,5 +1,4 @@
 
-// const axios = require("axios");
 // let cardImage = document.querySelector(".card-image");
 
 // axios({
@@ -26,10 +25,14 @@
 // }
 $(document).ready(function () {
 // click handler for the movie search
-$("#search").click(()=>{
+$("#searchBtn").click((e)=>{
+    console.log("search button clicked, searching for movies")
     // ajax to hit the server side call to the route
+    let movie = $(".searchMovie").val().trim();
 
-    $.get("/api/movies", ((data)=>{
+    console.log("The value of the movie" + movie);
+
+    $.ajax("/api/movies/search/"+ movie , ((data)=>{
         console.log(data);
     }))
 })
@@ -37,7 +40,7 @@ $("#search").click(()=>{
 
 $(document).ready(function() {
 
-// const axios = require("axios");
+
 // let cardImage = document.querySelector(".card-image");
 
 // axios({
@@ -70,7 +73,7 @@ function getUserName() {
 }
 
 function queryAllMovies() {
-    connection.query("SELECT * FROM user_movies", function(err, res) {
+    connection.get("SELECT * FROM user_movies", function(err, res) {
       if (err) throw err;
       for (var i = 0; i < res.length; i++) {
           console.log(res[i].imdb_ID + " | " + res[i].title + " | " + res[i].plot + " | " + res[i].poster);
