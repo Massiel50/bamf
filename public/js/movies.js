@@ -25,7 +25,8 @@
 // }
 $(document).ready(function () {
 // click handler for the movie search
-$("#searchBtn").click((e)=>{
+$("#searchBtn").click((event)=>{
+    event.preventDefault();
     console.log("search button clicked, searching for movies")
     // ajax to hit the server side call to the route
     let movie = $(".searchMovie").val().trim();

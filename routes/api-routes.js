@@ -51,6 +51,7 @@ module.exports = function (app) {
     }
   });
 
+
   app.get("/api/movies/search/:movie", function (req, res) {
     // get movie from parameters
     let movie = req.params.movie;
@@ -62,10 +63,6 @@ module.exports = function (app) {
     console.log("Title", results.title);
     console.log("Image", results.poster);
     console.log("Plot", results.plot);
-
-    res.render("movies", results);
-  });
-
 
 
 
