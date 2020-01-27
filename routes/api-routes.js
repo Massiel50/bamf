@@ -82,6 +82,7 @@ module.exports = function (app) {
    console.log("with this data ", req.body);
    
   db.userMovies.create({
+    UserId:1,
     imdbID:req.body.imdbID,
     poster: req.body.poster,
     title: req.body.title,
@@ -98,15 +99,3 @@ module.exports = function (app) {
 };
 //   app.get("/moviedata", function (req,res){
 
-
-    app.get("/moviedata", function (req, res) {
-      axios.get("https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy")
-        .then(function (data) {
-          console.log(data);
-
-        })
-    });
-
-
-  });
-}
