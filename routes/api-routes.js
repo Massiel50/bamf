@@ -4,40 +4,40 @@ var passport = require("../config/passport");
 var axios = require("axios");
 var moviesController = require("../controllers/moviescontrollers")
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", function(req, res) {
+  app.post("/api/signup", function (req, res) {
     db.User.create({
-      email: req.body.email,
-      password: req.body.password,
-      firstname: req.body.firstname,
-      lastname: req.body.lastname
-    })
-      .then(function() {
+        email: req.body.email,
+        password: req.body.password,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname
+      })
+      .then(function () {
         res.redirect(307, "/api/login");
       })
-      .catch(function(err) {
+      .catch(function (err) {
         res.status(401).json(err);
       });
   });
 
   // Route for logging user out
-  app.get("/logout", function(req, res) {
+  app.get("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
   });
 
   // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", function(req, res) {
+  app.get("/api/user_data", function (req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
@@ -52,17 +52,37 @@ module.exports = function(app) {
   });
 
 
+  app.get("/api/movies/search/:movie", function (req, res) {
+    // get movie from parameters
+    let movie = req.params.movie;
 
-  
+    console.log(movie)
 
-  
-  app.get("/moviedata", function (req,res){
+    let results = moviesController.getMovies(movie);
+    console.log("results is ", results);
+    console.log("Title", results.title);
+    console.log("Image", results.poster);
+    console.log("Plot", results.plot);
+
+
+
+  app.get("/moviedata", function (req, res) {
     axios.get("https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy")
-    .then(function(data){
-      console.log(data);
-      
-    })
-  })
+      .then(function (data) {
+        console.log(data);
+
+      })
+  });
+  
+  app.delete("/api/members/:id", function (req, res) {
+    db.userMovies.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbuserMovies) {
+      res.json(dbuserMovies);
+    });
+  });
 };
 //   app.get("/moviedata", function (req,res){
 
@@ -75,8 +95,10 @@ module.exports = function(app) {
 //       console.log(data);
 //       generateMovieCards(data);
 //     })
-  
+
 //   function generateMovieCards() {
 //     // loop through the data movie title and posters
 //   }
 // })
+
+// A delete route for the userMovies
