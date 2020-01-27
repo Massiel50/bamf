@@ -1,28 +1,20 @@
 // Dependencies
 const axios = require("axios");
 
-module.exports = function getMovies() {
+module.exports.getMovies = function(movie) {
   // User Movie request
-  let movieCardData;
-  let movie = $("#search")
-    .val()
-    .trim();
+  let movieCardData = {};
+ 
   // Get request from OMDB API
-  axios
-    .get(`https://www.omdbapi.com/?t=${movie}&apikey=trilogy`)
+ axios.get(`https://www.omdbapi.com/?t=${movie}&apikey=trilogy`)
     .then(function(res) {
-      // Title
-      console.log(res.data.imdbID);
-      console.log(res.data.Poster);
-      console.log(res.data.Title);
-      console.log(res.data.Plot);
 
-      movieCardData = [
-        { imdbID: res.data.imdbID },
-        { poster: res.data.poster },
-        { title: res.data.Title },
-        { plot: res.data.Plot }
-      ];
+      movieCardData.imdbID = res.data.imdbID;
+      movieCardData.poster = res.data.Poster;
+      movieCardData.title = res.data.Title;
+      movieCardData.plot = res.data.Plot; 
+      
     });
-  return movieCardData;
+
+    return movieCardData;
 };

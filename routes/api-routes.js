@@ -2,7 +2,7 @@
 var db = require("../models");
 var passport = require("../config/passport");
 var axios = require("axios");
-var movies = require("../controllers/moviescontrollers")
+var moviesController = require("../controllers/moviescontrollers")
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -49,6 +49,21 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  app.get("/api/movies/search/:movie", function(req, res) {
+    // get movie from parameters
+    let movie = req.params.movie;
+    
+    console.log(movie)
+    
+    let results = moviesController.getMovies(movie);
+    console.log("results is ",  results);
+    console.log("Title", results.title);
+    console.log("Image", results.poster);
+    console.log("Plot", results.plot);
+
+    res.render("movies", results);
   });
 
   
