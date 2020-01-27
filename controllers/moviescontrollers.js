@@ -13,10 +13,13 @@ axios.get(`https://www.omdbapi.com/?t=${movie}&apikey=trilogy`)
         console.log(res.data.Title);
         console.log(res.data.Plot);
 
-        let imdbID = res.data.imdbID;
-        let poster = res.data.poster;
-        let title = res.data.Title;
-        let plot = res.data.Plot;
+        let movieCardData = {
+             imdbID :res.data.imdbID,
+             poster :res.data.poster,
+             title :res.data.Title,
+             plot :res.data.Plot
+        }
 
         
+
     });
