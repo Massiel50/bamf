@@ -1,18 +1,17 @@
 $(document).ready(function () {
     // Getting references to our form and inputs
-    var logoutForm = $("#logoutBtn");
+    var searchform = $("#searchbtn");
 
     // When the form is submitted, we validate there's an email and password entered
-    logoutForm.on("click", function (event) {
-        logoutUser()
+    searchform.on("click", function (event) {
+        searchMovies()
 
     })
-
-    function logoutUser() {
-        $.get("/logout")
+    function searchMovies() {
+        $.get("/")
 
          .then(function () {
-             console.log("succesfully logged out");
+             console.log("");
              
                 // If there's an error, log the error
             })
