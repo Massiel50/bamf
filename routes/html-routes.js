@@ -1,6 +1,7 @@
 // Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
 var moviesController = require("../controllers/moviescontrollers")
+var db = require("../models");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -34,7 +35,20 @@ module.exports = function (app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function (req, res) {
-    res.render("members",{user:req.user})
+    console.log(req.user);
+    db.User.findOne({
+      where: {
+        id: req.user.id
+      },
+      include:[db.userMovies]
+    })
+    .then(function(data){
+      console.log(data);
+      
+    })
+
+    res.render("dashboard",{user:req.user})
+
   });
  // shows the movies page for searching for movies
   app.get("/movies", function(req,res){
