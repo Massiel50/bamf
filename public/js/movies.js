@@ -37,7 +37,7 @@ $("#search").click(()=>{
 
 $(document).ready(function() {
 
-const axios = require("axios");
+// const axios = require("axios");
 // let cardImage = document.querySelector(".card-image");
 
 // axios({
