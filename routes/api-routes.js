@@ -51,8 +51,17 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/movies")
   
+
+  
+  app.get("/moviedata", function (req,res){
+    axios.get("https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy")
+    .then(function(data){
+      console.log(data);
+      
+    })
+  })
+};
 //   app.get("/moviedata", function (req,res){
 
 //     // let search = $("#search").val().trim();
@@ -69,4 +78,3 @@ module.exports = function(app) {
 //     // loop through the data movie title and posters
 //   }
 // })
-}
