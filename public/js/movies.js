@@ -70,7 +70,7 @@ function getUserName() {
 }
 
 function queryAllMovies() {
-    connection.query("SELECT * FROM user_movies", function(err, res) {
+    connection.get("SELECT * FROM user_movies", function(err, res) {
       if (err) throw err;
       for (var i = 0; i < res.length; i++) {
           console.log(res[i].imdb_ID + " | " + res[i].title + " | " + res[i].plot + " | " + res[i].poster);
