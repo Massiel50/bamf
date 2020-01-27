@@ -2,6 +2,8 @@
 var db = require("../models");
 var passport = require("../config/passport");
 var axios = require("axios");
+var movies = require("../controllers/moviescontrollers")
+
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -48,6 +50,9 @@ module.exports = function(app) {
       });
     }
   });
+
+  
+
   
   app.get("/moviedata", function (req,res){
     axios.get("https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy")

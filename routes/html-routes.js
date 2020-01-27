@@ -52,5 +52,8 @@ module.exports = function (app) {
 
     res.render("dashboard",{user:req.user})
   });
- 
+ // shows the movies page for searching for movies
+app.get("/movies", function(req,res){
+  res.render("movies");
+})
 };
