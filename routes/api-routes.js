@@ -73,4 +73,3 @@ module.exports = function(app) {
 //     // loop through the data movie title and posters
 //   }
 // })
-}
