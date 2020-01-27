@@ -1,3 +1,7 @@
+
+`
+function renderMovieData(${data}){
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,24 +45,22 @@
           </div>
           
          
-          <h1>Movie title: {{data}}</h1>
+          <!-- <h1>Movie title: {{data}}</h1>
           <p>Movie image:{{poster}}</p>
-          <p>Movie plot:{{plot}}</p>
+          <p>Movie plot:{{plot}}</p> -->
       
-      
-      
-      
+ 
           <!-- cards for movies -->
           <div class="row movieCard">
             <div class="col s3">
               <div class="card">
                 <div class="card-image">
-                  <img src="/public/styles/images/b&w tree.jpg">
+                  <img src=${data.poster}>
       
                   <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                 </div>
                 <div class=" moviePoster card-content">
-                  <span class="card-title">Card Title</span>
+                  <span class="card-title">${data.title}</span>
                 </div>
               </div>
             </div>
@@ -71,5 +73,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script> type="text/javascript" src="testing.js"</script>
   </body>
 </html>
+}`

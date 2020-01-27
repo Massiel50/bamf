@@ -1,5 +1,6 @@
 // Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
+var moviesController = require("../controllers/moviescontrollers")
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -45,16 +46,16 @@ module.exports = function (app) {
     let movie = req.params.movie
     console.log("movie", movie);
     
-      // moviesController.getMovies(movie,(data) => {
+      moviesController.getMovies(movie,(data) => {
     
-      //   //update the object
-      //   console.log("the data is ",  data);
-      //   console.log("Title", data.title);
-      //   console.log("Image",data.poster);
-      //   console.log("Plot",data.plot);
-      //   return data;
-      // });
-    res.render("home");
+        //update the object
+        console.log("the data is ",  data);
+        console.log("Title", data.title);
+        console.log("Image",data.poster);
+        console.log("Plot",data.plot);
+        renderData(data)
+      });
+    res.render("movies", data);
   })
 
 };
