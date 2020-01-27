@@ -95,18 +95,4 @@ module.exports = function (app) {
       res.status(500).json(err);
     });
 });
-};
-//   app.get("/moviedata", function (req,res){
-
-
-    app.get("/moviedata", function (req, res) {
-      axios.get("https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy")
-        .then(function (data) {
-          console.log(data);
-
-        })
-    });
-
-
-  });
 }
