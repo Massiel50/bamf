@@ -97,5 +97,3 @@ module.exports = function (app) {
     });
 });
 };
-//   app.get("/moviedata", function (req,res){
-
