@@ -1,4 +1,4 @@
-// const axios = require("axios");
+
 // let cardImage = document.querySelector(".card-image");
 
 // axios({
