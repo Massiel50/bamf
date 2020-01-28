@@ -24,24 +24,22 @@
       </div>
       <a id="searchBtn" rel="noopener noreferrer"class="waves-effect waves-light btn">Search</a>
     </div>
-    
-  {{!-- <h1>Movie title: <span id="title">{{title}}</span></h1> --}}
-    {{!-- <p>Movie image:</p><image id="image" src="">{{poster}} --}}
-    {{!-- <p>Movie plot:<span id="plot">{{plot}}</span></p> --}}
-    <!-- cards for movies -->
+
     <div class="row movieCard">
       <div class="col m6">
         <div class="card">
           <div class="card-image">
             <image id="image" src={{poster}}>
 
-            <a id="saveMovie" href= "/members" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+            <button><a id="saveMovie" href= "/members" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a></button>
           </div>
-          <div class=" hide moviePoster card-content">
+          <div class="moviePoster card-content">
             <span class="card-title" id="title">{{title}}</span>
             <p><span id="plot">{{plot}}</span></p>
           </div>
         </div>
+        
       </div>
 
     </div>
+</div>
