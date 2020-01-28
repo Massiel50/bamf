@@ -96,4 +96,19 @@ module.exports = function (app) {
       res.status(500).json(err);
     });
 });
+
+// get data from db to plop on members page
+
+app.post("/api/movies", function(req, res) {
+  console.log("show movie route...");
+  console.log("with this data ", req.body);
+  
+ db.userMovies.findAll({})
+   .then(function() {
+     res.render("/members", userMovies);
+   })
+   .catch(function(err) {
+     res.status(500).json(err);
+   });
+});
 };

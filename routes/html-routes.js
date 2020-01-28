@@ -2,6 +2,7 @@
 var path = require("path");
 var moviesController = require("../controllers/moviescontrollers")
 var db = require("../models");
+var connection = require("../config/connection")
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -54,5 +55,5 @@ module.exports = function (app) {
   app.get("/movies", function(req,res){
     res.render("movies");
   })
-
+  
 };
