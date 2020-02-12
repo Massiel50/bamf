@@ -5,7 +5,11 @@ We had this idea so that movie enthusiasts and those alike could have an easy pl
 
 By using the OMDB movie API we were able to pull every movie into the database to be searched so the user can pick and then add it to their personal list. With this API the user gets the movie title, movie plot, and even the movie poster. 
 
-Massiel was responsible for materialize, the html css styling, and the routes of the handlebars. She worked with Avery, who got the OMDB API, to figure out getting the API call to work. Josh worked with the html css styling with Massiel. Avery and Josh worked together to make the save and delete function of the movie’s handlebar routes and associating the two tables. Avery worked on the user database, the movies database, and some styling and the member’s page. Dan worked on getting the server, the configurations, the models, functionality of some buttons and some css. 
+Massiel was responsible for materialize, the html css styling, and the routes of the handlebars. She worked with Avery, who got the OMDB API, to figure out getting the API call to work. 
+Josh worked with the html css styling with Massiel. 
+Avery and Josh worked together to make the save and delete function of the movie’s handlebar routes and associating the two tables. 
+Avery worked on the user database, the movies database, and some styling and the member’s page. 
+Dan worked on getting the server, the configurations, the models, functionality of some buttons and some css. 
 
 The challenges that we ran into were getting the content from the API to render on the page with the information we were asking about. Then, adding and removing the information from the database. Also, making sure the ID of the person that is logged in corresponds with the movies in their database. 
 
