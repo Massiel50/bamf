@@ -1,4 +1,5 @@
 # bamf
+# A movie lister
 You know when people recommend a movie to watch and you always respond with “oh, yeah. I’ll add it to the list.” But, in actuality, there is no list. Our application is bringing that list to life. It is an easy way to curate a list of movies to watch or movies you’d like to watch again. They can easily see their list on their own personal account where they can search for any movie, add it to the list, then cross it off after they’ve watched it.
 
 We had this idea so that movie enthusiasts and those alike could have an easy place to find new movies, keep track of recommended movies, and scratch movies off as they watch them so they can see progress. Their account makes this a simple process for them and fun for friends.
